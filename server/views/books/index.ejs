@@ -1,6 +1,5 @@
 <!--index.ejs Juneau Gawat 301076796 comp229-f2020-midterm-30107679--> 
 <% include ../partials/header.ejs %>
-
     <!-- MAIN CONTENT -->
     <div class="container">
       <div class="row">
@@ -12,7 +11,8 @@
             <table class="table table-bordered table-striped table-hover">
               <thead>
                 <tr>
-                  <th>Title</th>
+                  <th class="text-center">Title</th>
+                  <th class="text-center">Description</th>
                   <th class="text-center">Price</th>
                   <th class="text-center">Author</th>
                   <th class="text-center">Genre</th>
@@ -24,16 +24,16 @@
                 <!-- Template Row -->
                 <% for (let count = 0; count < books.length; count++) { %>
                 <tr>
-                  <td><%= books[count].Title %></td>
-                  <td class="text-center">$<%= books[count].Price %></td>
-                  <td class="text-center"><%= books[count].Author %></td>
-                  <td class="text-center"><%= books[count].Genre %></td>
-
-                  <td class="text-center">
+                  <td class="text-center" style="vertical-align: middle"><%= books[count].Title %></td>
+                  <td class="text-center" style="vertical-align: middle"><%= books[count].Description %></td>
+                  <td class="text-center" style="vertical-align: middle">$<%= books[count].Price %></td>
+                  <td class="text-center" style="vertical-align: middle"><%= books[count].Author %></td>
+                  <td class="text-center" style="vertical-align: middle"><%= books[count].Genre %></td>
+                  <td class="text-center" style="vertical-align: middle">
                     <a href="/books/<%= books[count]._id %>" class="btn btn-primary btn-sm"> Edit</a>
                   </td>
 
-                  <td class="text-center">
+                  <td class="text-center" style="vertical-align: middle">
                     <a href="/books/delete/<%= books[count]._id %>" class="btn btn-danger btn-sm"> Delete</a>
                   </td>
                 </tr>
